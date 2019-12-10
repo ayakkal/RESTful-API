@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const fetch = require('node-fetch');
 
+router.get('/document',function(req,res){
+    res.sendFile(__dirname+'/index.html');
+})
+
 router.get('/book',function(req,res){
 
     fetch('http://localhost:3000/books').then(res => res.json()).then(json => {
